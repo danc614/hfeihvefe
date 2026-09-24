@@ -1,0 +1,86 @@
+.principal{
+    width: 1330px;
+    height: 850px;
+    border-radius: 20px;
+    background-color: white;
+    border: 2px solid black;
+}
+.principal2{
+    width: 820px;
+    height: 60px;
+    border: 1px solid black;
+    border-radius: 20px;
+    position: relative;
+    top: 10px;
+    left: 240px;
+}
+.barra{
+    width: 820px;
+    height: 20px;
+    position: relative;
+    left: 5px;
+    top: 1px;
+}
+.opçoes{
+    width: 450px;
+    height: 20px;
+    border-radius: 20px;
+    position: relative;
+}
+h2{
+    position: relative;
+    top: 70px;
+    left: 50px;
+}
+.troca{
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 500px;
+    height: 300px;
+    position: relative;
+    left: 30px;
+    top: 70px;
+    background-color: white;
+    z-index: 1;
+}
+
+.celular{
+    width: 250px;
+    height: 300px;
+    border: 2px solid black;
+    position: relative;
+    left: 650px;
+    bottom: 230px;
+    background-color: white;
+    border-radius: 30px;
+}
+.celular2{
+    width: 250px;
+    height: 300px;
+    border: 2px solid black;
+    position: absolute;
+    left: 980px;
+    bottom: 120px;
+    background-color: white;
+    border-radius: 30px;
+}
+.divdecelular{
+    width: 850px;
+    height: 400px;
+
+
+}
+.categorias{
+    width: 250px;
+    height: 350px;
+    border-radius: 20px;
+    border: 3px solid black;
+    position: absolute;
+    left: 30px;
+    top: 40px;
+    z-index: 2;
+    display: none;
+}
+.cater:hover + .categorias{
+    display: block;
+}
