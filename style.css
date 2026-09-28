@@ -84,3 +84,17 @@ h2{
 .cater:hover + .categorias{
     display: block;
 }
+.divcadrasto{
+    width: 400px;
+    height: 500px;
+    border: 2px solid black;
+    border-radius: 20px;
+    position: absolute;
+    left: 34%;
+    top: 100px;
+}
+.divdentro{
+    position: absolute;
+    left: 102px;
+    top: 200px;
+}
