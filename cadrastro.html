@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 style="position: absolute; left: 39%;">Página de Cadastro</h1>
+    <div class="divcadrasto">
+        <div class="divdentro">
+            <H2 style="position: absolute; top: -130px;">Cadastro</H2>
+        <!--<form action="index.html" method="post">-->
+        <label for="nome" style="font-size: 17px;">Nome do Usuario</label> <br>
+        <input name="nome" id="nome" type="text" placeholder="Enter Username" style=" width: 200px; height: 20px;">
+        <br>
+        <label for="email" style="font-size: 17px;">E-mail</label>
+        <br>
+        <input name="email" id="email" type="email" placeholder="E.X.john@gmail.com"  style=" width: 200px; height: 20px;">
+        <br>
+        <label for="senha" style="font-size: 17px;">Senha</label> 
+        <br>
+        <input name="senha" id="senha" type="password" placeholder="insira sua senha"  style=" width: 200px; height: 20px;">
+        <br>
+        <button type="submit" id="registrar" style="border-radius: 20px; background-color: rgb(13, 121, 194);"><p>Registra-se</p></button>
+        <!--</form>-->
+        </div>
+    </div>
+    <script>
+        let botao = document.getElementById("registrar")
+        botao.addEventListener('submit', function(event){
+            event.preventDefault();
+            let nome = document.getElementsById("nome")
+            let email = document.getElementById("email")
+            let senha = document.getElementById("senha")
+
+        })
+    </script>
+</body>
