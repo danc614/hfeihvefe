@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        let teste;
+        let op;
+        let name;
+        let senha;
+        let contador = 0;
+        let salvar = false;
+        let infos = [
+            ["carlos","bulbassauro","marcos"],
+            [1920,8364,7284],
+            [10000,20000,30000]
+        ]
+        do {
+
+        senha = prompt("digite sua senha:")
+        name = prompt("digite deu nome de usuario:")
+        if(infos.includes(name)){
+            if(senha == infos[1][[indexOf(name)]]){
+                salvar = true;
+                break;
+            }
+        }
+        contador++
+        } while (contador < 3);
+
+        if(salvar){
+            do {
+                alert("agora tareos continuidade digite 1 para colsultar saldo 2 para fazer um deposito e 3 para sacar qualquer outra coisa n sera aceito:");
+                op = prompt("digiite oq deseja realisar conforme:");
+
+                switch(op){
+                    case 1: alert("seu saldo total e de:"+ infos[2][indexOf(name)]);
+                            break;
+
+                    case 2: let depositar = prompt("digite o quando deseja depositar:");
+                            infos[2][indexOf(name)] += depositar;
+                            alert("depois do eposito seu saldo e de: "+infos[2][indexOf(name)]);
+                            break;
+
+                    case 3: let sacar = prompt("digite o quando deseja sacar:");
+                            infos[2][indexOf(name)] -= sacar;
+                            alert("depois do saque seu saldo e de: "+infos[2][indexOf(name)]);
+                            break;
+
+                    default: alert("parece que ocorreu um erro ou vc digitou outro numero alem de 1, 2 ou 3")
+                }
+                teste = prompt("digite 1 se vc deseja fazer mais alguma coisa e qualquer outra coisa para parar de vez")
+                if(teste != 1){
+                    break;
+                }
+            } while (true);
+        }
+
+    </script>
+    
+</body>
+</html>
