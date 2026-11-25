@@ -12,31 +12,29 @@
         let op;
         let name;
         let senha;
-        let contador = 0;
+        let contador = 1;
         let salvar = false;
-        i = 0
+        let salve;
         let infos = [
         {nome: "carlos", senhas: 2801, saldo: 20000},
         {nome: "daniel", senhas: 2902, saldo: 10000},
-        {nome: "carlos", senhas: 2803, saldo: 50000},
-        {nome: "carlos", senhas: 2804, saldo: 70000}   
+        {nome: "sarah", senhas: 2803, saldo: 50000},
+        {nome: "bulbassauro", senhas: 2804, saldo: 70000}   
         ]
         do {
         name = prompt("digite deu nome de usuario:")
         senha = prompt("digite sua senha:")
 
-        for(i; i < infos.length; i++){
+        for(i = 0; i < infos.length; i++){
             if(infos[i].nome == name && infos[i].senhas == senha){
                 salvar = true;
-                break;
+                salve = i;
             }
         }
 
-        if(salvar){
-            break;
-        }
+        
 
-        if(contador < 3){
+        if(contador > 2){
             alert("o limite de tentativa foi alcansado")
             break;
         }
@@ -51,16 +49,16 @@
 
                 switch (op) {
 
-                    case 1: alert("seu saldo total e de: "+ infos[i].saldo);
+                    case 1: alert("seu saldo total e de: "+ infos[salve].saldo);
                             break;
                     case 2: let depositar = Number(prompt("digite o quando deseja depositar:"));
-                            infos[i].saldo += depositar;
-                            alert("depois do eposito seu saldo e de: " + infos[i].saldo);
+                            infos[salve].saldo += depositar;
+                            alert("depois do deposito seu saldo e de: " + infos[salve].saldo);
                             break;
-                    case 3: let sacar = Number(prompt("digite o quando deseja sacar sem esceter o limite :"+ infos[i].saldo));
-                            if(sacar <= infos[i].saldo && sacar > 0){
-                                infos[i].saldo -= sacar;
-                                alert("depois do saque seu saldo e de: "+ infos[i].saldo);
+                    case 3: let sacar = Number(prompt("digite o quando deseja sacar sem esceter o limite :"+ infos[salve].saldo));
+                            if(sacar <= infos[salve].saldo && sacar > 0){
+                                infos[salve].saldo -= sacar;
+                                alert("depois do saque seu saldo e de: "+ infos[salve].saldo);
                             }
                             else{
                                 alert("vc parece ter digitado um valor q escete o da sua conta por favor se ta liso dorme ou um valor abaixo de zero")
