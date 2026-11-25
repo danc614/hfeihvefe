@@ -14,44 +14,60 @@
         let senha;
         let contador = 0;
         let salvar = false;
+        i = 0
         let infos = [
-            ["carlos","bulbassauro","marcos"],
-            [1920,8364,7284],
-            [10000,20000,30000]
+        {nome: "carlos", senhas: 2801, saldo: 20000},
+        {nome: "daniel", senhas: 2902, saldo: 10000},
+        {nome: "carlos", senhas: 2803, saldo: 50000},
+        {nome: "carlos", senhas: 2804, saldo: 70000}   
         ]
         do {
-
-        senha = prompt("digite sua senha:")
         name = prompt("digite deu nome de usuario:")
-        if(infos.includes(name)){
-            if(senha == infos[1][[indexOf(name)]]){
+        senha = prompt("digite sua senha:")
+
+        for(i; i < infos.length; i++){
+            if(infos[i].nome == name && infos[i].senhas == senha){
                 salvar = true;
                 break;
             }
         }
+
+        if(salvar){
+            break;
+        }
+
+        if(contador < 3){
+            alert("o limite de tentativa foi alcansado")
+            break;
+        }
+
         contador++
-        } while (contador < 3);
+        } while (!salvar);
 
         if(salvar){
             do {
                 alert("agora tareos continuidade digite 1 para colsultar saldo 2 para fazer um deposito e 3 para sacar qualquer outra coisa n sera aceito:");
-                op = prompt("digiite oq deseja realisar conforme:");
+                op = Number(prompt("digite oq deseja realisar conforme:"));
 
-                switch(op){
-                    case 1: alert("seu saldo total e de:"+ infos[2][indexOf(name)]);
+                switch (op) {
+
+                    case 1: alert("seu saldo total e de: "+ infos[i].saldo);
                             break;
-
-                    case 2: let depositar = prompt("digite o quando deseja depositar:");
-                            infos[2][indexOf(name)] += depositar;
-                            alert("depois do eposito seu saldo e de: "+infos[2][indexOf(name)]);
+                    case 2: let depositar = Number(prompt("digite o quando deseja depositar:"));
+                            infos[i].saldo += depositar;
+                            alert("depois do eposito seu saldo e de: " + infos[i].saldo);
                             break;
-
-                    case 3: let sacar = prompt("digite o quando deseja sacar:");
-                            infos[2][indexOf(name)] -= sacar;
-                            alert("depois do saque seu saldo e de: "+infos[2][indexOf(name)]);
+                    case 3: let sacar = Number(prompt("digite o quando deseja sacar sem esceter o limite :"+ infos[i].saldo));
+                            if(sacar <= infos[i].saldo && sacar > 0){
+                                infos[i].saldo -= sacar;
+                                alert("depois do saque seu saldo e de: "+ infos[i].saldo);
+                            }
+                            else{
+                                alert("vc parece ter digitado um valor q escete o da sua conta por favor se ta liso dorme ou um valor abaixo de zero")
+                            }
+                            
                             break;
-
-                    default: alert("parece que ocorreu um erro ou vc digitou outro numero alem de 1, 2 ou 3")
+                    default: alert("parece que ocorreu um erro ou vc digitou outro numero alem de 1, 2 ou 3");
                 }
                 teste = prompt("digite 1 se vc deseja fazer mais alguma coisa e qualquer outra coisa para parar de vez")
                 if(teste != 1){
